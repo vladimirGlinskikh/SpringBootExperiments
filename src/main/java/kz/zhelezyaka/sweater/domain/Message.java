@@ -2,10 +2,7 @@ package kz.zhelezyaka.sweater.domain;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @RequiredArgsConstructor
@@ -26,5 +23,16 @@ public class Message {
     @Getter
     @Setter
     private String tag;
+
+    @NonNull
+    @Getter
+    @Setter
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User author;
+
+    public String getAuthorName(){
+        return author != null ? author.getUsername() : "<none>";
+    }
 }
 

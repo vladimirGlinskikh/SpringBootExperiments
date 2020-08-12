@@ -1,6 +1,6 @@
 <#import "parts/common.ftl" as c>
 
 <@c.page>
-    <div>I love, Java</div>
-    <a href="/main">Main page</a>
+   <h5>Hi, guest</h5>
+    <div>Just this is my experiment with Spring Boot and nothing more.</div>
 </@c.page>
